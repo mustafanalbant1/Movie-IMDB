@@ -1,30 +1,7 @@
-// const API_KEY = "";
-// const BASE_URL = "http://www.omdbapi.com/";
-
-// // FUNGSI UNTUK MENCARI FILM BERDASARKAN JUDUL
-
-// export const searchMovies = async (query: string) => {
-//   const response = await fetch(`${BASE_URL}?s=${query}&apikey=${API_KEY}`);
-
-//   const data = await response.json();
-
-//   return data.Search;
-// };
-
-// // fungsi untuk mendapatkan detail film berdasarkan ID
-
-// export const getMovieDetails = async (id: string) => {
-//   const response = await fetch(`${BASE_URL}?i=${id}&apikey=${API_KEY}`);
-
-//   const data = await response.json();
-
-//   return data;
-// };
-
 import axios from "axios";
 
-const API_KEY = "ce0354";
-const BASE_URL = "http://www.omdbapi.com/";
+const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
+const BASE_URL = import.meta.env.VITE_OMDB_API_URL;
 
 // Film arama fonksiyonu
 export const searchMovies = async (query: string) => {
@@ -37,8 +14,10 @@ export const searchMovies = async (query: string) => {
     });
 
     return response.data.Search;
+
+    console.log(response.data.Search);
   } catch (error) {
-    console.error("Error fetching movies:", error);
+    console.error("Film arama hatası:", error);
     return [];
   }
 };
@@ -54,8 +33,10 @@ export const getMovieDetails = async (id: string) => {
     });
 
     return response.data;
+
+    console.log(response.data);
   } catch (error) {
-    console.error("Error fetching movie details:", error);
+    console.error("Film detayları getirme hatası:", error);
     return null;
   }
 };

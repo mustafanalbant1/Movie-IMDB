@@ -1,4 +1,3 @@
-
 import { useMovieContext } from "../context/MovieContext";
 
 const MovieModal = () => {
