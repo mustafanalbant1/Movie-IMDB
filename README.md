@@ -1,50 +1,78 @@
-# React + TypeScript + Vite
+# Movie Search App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, OMDB API kullanılarak geliştirilmiş bir film arama uygulamasıdır. Kullanıcılar film isimlerine göre arama yapabilir ve film detaylarını görüntüleyebilir.
 
-Currently, two official plugins are available:
+## 🛠️ Kullanılan Teknolojiler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- TypeScript
+- Vite
+- Axios
+- OMDB API
+- Tailwind CSS
 
-## Expanding the ESLint configuration
+## ⚙️ Kurulum
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Projeyi klonlayın:
+   ```bash
+   git clone [repo-url]
+   ```
+2. Proje dizinine gidin:
+   ```bash
+   cd movie-search-app
+   ```
+3. Gerekli paketleri yükleyin:
+   ```bash
+   npm install
+   ```
+4. `.env` dosyası oluşturun ve OMDB API anahtarınızı ekleyin:
+   ```plaintext
+   VITE_OMDB_API_KEY=your_api_key
+   ```
+5. Uygulamayı başlatın:
+   ```bash
+   npm run dev
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+## 🌟 Özellikler
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Film arama
+- Film detaylarını görüntüleme
+- Responsive tasarım
+- Anlık arama sonuçları
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 📝 API Kullanımı
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Bu proje [OMDB API](http://www.omdbapi.com/) kullanmaktadır. API kullanımı için bir API anahtarı gereklidir.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 🚀 Deployment
+
+Proje Netlify üzerinde host edilmektedir. `main` branch'e yapılan her push otomatik olarak deploy edilir.
+
+## 👥 Katkıda Bulunma
+
+1. Projeyi fork edin.
+2. Yeni bir feature branch oluşturun:
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+3. Değişikliklerinizi commit edin:
+   ```bash
+   git commit -m 'feat: Add amazing feature'
+   ```
+4. Branch'inizi push edin:
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+5. Pull Request oluşturun.
+
+## 📄 Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır.
+
+## 📞 İletişim
+
+[İsminiz] - [Email adresiniz]
+
+Proje Linki: [https://github.com/username/repo-name](https://github.com/username/repo-name)
+
